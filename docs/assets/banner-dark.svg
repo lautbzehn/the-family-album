@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-label="The Family Album: A handwritten family album, read and translated with AI, and published only in anonymized form.">
+<defs>
+  <radialGradient id="g" cx="0.12" cy="0.1" r="0.75"><stop offset="0" stop-color="#f97343" stop-opacity="0.22"/><stop offset="1" stop-color="#f97343" stop-opacity="0"/></radialGradient>
+  <pattern id="p" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" fill="none" stroke="rgba(255,255,255,0.035)" stroke-width="1"/></pattern>
+  <linearGradient id="fade" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#0d0b0a" stop-opacity="0"/><stop offset="1" stop-color="#0d0b0a" stop-opacity="1"/></linearGradient>
+</defs>
+<style>
+  .sun { animation: pulse 6.7s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { fill: #f97343; } 50% { fill: #34d399; } }
+  .cur { animation: glow 3.4s ease-in-out infinite; }
+  @keyframes glow { 0%,100% { stroke-opacity: 0.55; } 50% { stroke-opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .sun, .cur { animation: none; } }
+</style>
+<rect width="1280" height="420" rx="24" fill="#0d0b0a"/>
+<rect width="1280" height="420" rx="24" fill="url(#p)"/>
+<rect width="1280" height="420" rx="24" fill="url(#fade)" opacity="0.6"/>
+<rect width="1280" height="420" rx="24" fill="url(#g)"/>
+<rect x="0.5" y="0.5" width="1279" height="419" rx="23.5" fill="none" stroke="rgba(255,255,255,0.09)"/>
+<g transform="translate(64 58)">
+  <g fill="none" stroke="#f5efe8" stroke-width="2.6" stroke-linecap="round" transform="scale(1.25)"><path d="M3 21c7-.6 12.5-4.6 16-11"/><path d="M6 25.5c7.8-.6 14-4.8 18-12"/><path d="M11 29.5c6.5-.7 11.6-4.2 15-10"/></g>
+  <circle class="sun" cx="31.9" cy="8.1" r="4.6" fill="#f97343"/>
+  <text x="56" y="27" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="15" letter-spacing="2.4" fill="#a39d95">AN ICARIAN FORGE PRODUCT · A CREATIVE PROJECT</text>
+</g>
+<text x="64" y="172" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="58" font-weight="700" letter-spacing="-1.6" fill="#f5efe8"><tspan fill="#f5efe8">The Family </tspan><tspan fill="#f97343">Album</tspan></text>
+<text x="66" y="220" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="25" font-weight="400" fill="#a39d95">A handwritten family album, read and translated with AI, and published only in anonymized form.</text>
+<rect x="64.0" y="284" width="209.6" height="44" rx="22" fill="rgba(255,255,255,0.045)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<text x="168.8" y="312" text-anchor="middle" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="500" fill="#a39d95">Photograph </text>
+<path d="M286.6 300.0 L292.6 306.0 L286.6 312.0 L280.6 306.0 Z" fill="none" stroke="#6f6a64" stroke-width="1.6"/>
+<rect x="299.6" y="284" width="209.6" height="44" rx="22" fill="rgba(255,255,255,0.045)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<text x="404.4" y="312" text-anchor="middle" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="500" fill="#a39d95"> Read </text>
+<path d="M522.2 300.0 L528.2 306.0 L522.2 312.0 L516.2 306.0 Z" fill="none" stroke="#6f6a64" stroke-width="1.6"/>
+<rect x="535.2" y="284" width="209.6" height="44" rx="22" fill="rgba(255,255,255,0.045)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<text x="640.0" y="312" text-anchor="middle" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="500" fill="#a39d95"> Translate </text>
+<path d="M757.8 300.0 L763.8 306.0 L757.8 312.0 L751.8 306.0 Z" fill="none" stroke="#6f6a64" stroke-width="1.6"/>
+<rect x="770.8" y="284" width="209.6" height="44" rx="22" fill="rgba(255,255,255,0.045)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<text x="875.6" y="312" text-anchor="middle" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="500" fill="#a39d95"> Research </text>
+<path d="M993.4 300.0 L999.4 306.0 L993.4 312.0 L987.4 306.0 Z" fill="none" stroke="#6f6a64" stroke-width="1.6"/>
+<rect x="1006.4" y="284" width="209.6" height="44" rx="22" fill="rgba(255,255,255,0.045)" stroke="rgba(255,255,255,0.09)" stroke-width="1"/>
+<text x="1111.2" y="312" text-anchor="middle" font-family="Inter, ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15.5" font-weight="500" fill="#a39d95"> Write and build</text>
+<text x="64" y="386" font-family="'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, Consolas, monospace" font-size="14" letter-spacing="1.6" fill="#6f6a64">Demo · icarianforge.com/work/the-album</text>
+</svg>
