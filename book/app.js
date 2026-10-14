@@ -1,5 +1,8 @@
 const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
 const R=document.documentElement;
+/* Plain text from book markup, via the browser's parser (inert: nothing runs), and escaping for attributes. */
+const textOf=h=>new DOMParser().parseFromString(String(h),"text/html").body.textContent||"";
+const attr=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[c]);
 const ENTRY_SEQ=[13,11,12,29,2,9,10,21,26,36,20,33,18,19,0,null];
 
 const UI={
@@ -268,8 +271,8 @@ function renderLeaves(){
     const src=(window.IMAGES||{})[l.seq];
     const thumb=l.missing?`<div class="thumb">${t.noimg}</div>`
       :src?(()=>{const ti=(l.fields.find(f=>/^Title|^Subject|^Text$/.test(f.k))||{}).v||"";
-             const plain=ti.replace(/<[^>]+>/g,"").replace(/[✔~?—]/g,"").trim().slice(0,60);
-             return `<div class="thumb has-img"><img src="${src}" alt="${t.leaf} ${String(l.seq).padStart(2,"0")}${plain?", "+plain:""}" loading="lazy" data-zoom="${l.seq}" tabindex="0" role="button"></div>`;})()
+             const plain=textOf(ti).replace(/[✔~?—]/g,"").trim().slice(0,60);
+             return `<div class="thumb has-img"><img src="${src}" alt="${t.leaf} ${String(l.seq).padStart(2,"0")}${plain?", "+attr(plain):""}" loading="lazy" data-zoom="${l.seq}" tabindex="0" role="button"></div>`;})()
       :`<div class="thumb">${t.pending}</div>`;
     const dl=l.fields.map(f=>`<dt>${FL(f.k)}</dt><dd>${f.v}</dd>`).join("");
     return `<div class="leaf${l.missing?" gone":""}">
@@ -294,14 +297,14 @@ function md2html(s){
 }
 const MON={Jan:0,Feb:1,Mar:2,Apr:3,May:4,Jun:5,Jul:6,Aug:7,Sep:8,Oct:9,Nov:10,Dec:11};
 function pdate(s){
-  s=s.replace(/<[^>]+>/g,"").replace(/\?/g,"").trim();
+  s=textOf(s).replace(/\?/g,"").trim();
   const m=s.match(/^(?:(\d{1,2})\s+)?(?:([A-Za-z]{3})[a-z]*\s+)?(\d{4})$/);
   if(!m) return null;
   return new Date(m[3], m[2]?MON[m[2]]:0, m[1]?+m[1]:1);
 }
 function renderApp(){
   const t=T();
-  const rows=IDX.timeline.map((r,i)=>{const raw=r.date.replace(/<[^>]+>/g,"").replace(/\?/g,"").trim();
+  const rows=IDX.timeline.map((r,i)=>{const raw=textOf(r.date).replace(/\?/g,"").trim();
     const ap=/^\d{4}$/.test(raw); return {...r,d:ap?new Date(+raw,6,1):pdate(r.date),i,ap};}).filter(r=>r.d);
   const main=rows.filter(r=>r.d.getFullYear()<1920);
   const t0=new Date(1907,0,1), t1=new Date(1911,5,1);
@@ -318,7 +321,7 @@ function renderApp(){
     axis+=`<line x1="${x(d)}" y1="${H-PB-4}" x2="${x(d)}" y2="${H-PB+2}" stroke="var(--rule2)" stroke-width="1"/>`;
   }
   const base=H-PB;
-  const TLL=CAT().timeline, plain=s=>s.replace(/<[^>]+>/g,"");
+  const TLL=CAT().timeline, plain=s=>attr(textOf(s));
   const placed=[];
   const dots=main.map(r=>{
     const px=x(r.d);
