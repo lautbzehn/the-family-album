@@ -31,7 +31,7 @@
 
 **What is public.** Only the reader, running on an anonymized stand-in for the book.
 
-> Built by **[Dan West](https://www.icarianforge.com)**, an AI strategy and adoption leader with nearly 20 years in IT, by directing Claude as reader, translator, researcher and builder.
+> Built by **[Dan West](https://www.icarianforge.com)**, an AI strategy and operations leader with nearly 20 years in IT, by directing Claude as reader, translator, researcher and builder.
 
 <p>
   <img src="docs/screenshots/cover.webp" width="66%" alt="The demo book's cover page, marked as anonymized for this portfolio">
